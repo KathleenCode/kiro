@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Test</title>
+    <style>
+        body { padding: 50px; font-family: Arial, sans-serif; }
+        input { padding: 10px; font-size: 16px; width: 300px; margin: 10px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #ddd; }
+    </style>
+</head>
+<body>
+    <h2>Input Test</h2>
+    <input type="text" id="test-input" placeholder="Type something here...">
+    <button onclick="testInput()">Test Input</button>
+    <p id="result"></p>
+    
+    <script>
+        function testInput() {
+            const input = document.getElementById('test-input');
+            const result = document.getElementById('result');
+            result.textContent = 'You entered: ' + input.value;
+        }
+    </script>
+</body>
+</html>

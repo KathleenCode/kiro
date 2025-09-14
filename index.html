@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Story Learning App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>📚 Story Learning Adventure</h1>
+            <p>Enter a theme and discover stories with new words and moral lessons!</p>
+        </header>
+
+        <main>
+            <!-- Theme Input Section -->
+            <section id="theme-section" class="section active">
+                <div class="input-container">
+                    <label for="theme-input">What story theme interests you?</label>
+                    <input type="text" id="theme-input" placeholder="e.g., friendship, courage, kindness, adventure...">
+                    <button id="generate-story-btn">Generate Story</button>
+                </div>
+            </section>
+
+            <!-- Story Reading Section -->
+            <section id="story-section" class="section">
+                <div class="story-container">
+                    <h2 id="story-title"></h2>
+                    <div class="story-content">
+                        <div id="story-text"></div>
+                        <div id="vocabulary-card" class="vocab-card hidden">
+                            <h3>New Word Learned!</h3>
+                            <div class="word-info">
+                                <span id="vocab-word"></span>
+                                <span id="vocab-definition"></span>
+                            </div>
+                            <button id="continue-btn">Continue Reading</button>
+                        </div>
+                    </div>
+                    <div class="story-controls">
+                        <button id="restart-btn">New Story</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section id="quiz-section" class="section">
+                <div class="quiz-container">
+                    <h2>🎯 Moral Lessons Quiz</h2>
+                    <div id="quiz-content">
+                        <div id="question-container">
+                            <h3 id="question-text"></h3>
+                            <div id="answer-options"></div>
+                        </div>
+                        <div id="quiz-results" class="hidden">
+                            <h3>Quiz Complete!</h3>
+                            <p id="score-text"></p>
+                            <button id="new-story-btn">Try Another Story</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

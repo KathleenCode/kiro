@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "name": "Update Documentation",
+  "description": "Automatically updates product.md, structure.md, and tech.md documentation files whenever code changes are made to maintain accurate project documentation",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "index.html",
+      "script.js",
+      "styles.css",
+      "debug.html",
+      "test.html",
+      ".vscode/launch.json",
+      ".vscode/settings.json"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Code files have been modified. Please review the changes and update the following documentation files to reflect any changes in product features, project structure, or technology stack:\n\n1. **product.md** - Update if there are changes to:\n   - Application features or functionality\n   - User experience or interface\n   - Target audience or value proposition\n\n2. **structure.md** - Update if there are changes to:\n   - File organization or new files added\n   - Code architecture or class structure\n   - Naming conventions or development patterns\n\n3. **tech.md** - Update if there are changes to:\n   - Technology stack or dependencies\n   - Development environment setup\n   - Code style guidelines or architecture patterns\n\nAnalyze the modified files and ensure the documentation accurately reflects the current state of the project."
+  }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Input Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        input {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background: white !important;
+            color: #333 !important;
+            box-sizing: border-box;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Debug Input Test</h2>
+        <p>Try typing in the input field below:</p>
+        
+        <label for="test-input">Enter a theme:</label>
+        <input type="text" id="test-input" placeholder="Type something here..." autocomplete="off">
+        <button onclick="testInput()">Test Input</button>
+        
+        <div id="result" class="result" style="display: none;">
+            <strong>Input Value:</strong> <span id="input-value"></span>
+        </div>
+    </div>
+    
+    <script>
+        function testInput() {
+            const input = document.getElementById('test-input');
+            const result = document.getElementById('result');
+            const valueSpan = document.getElementById('input-value');
+            
+            console.log('Input element:', input);
+            console.log('Input value:', input.value);
+            
+            valueSpan.textContent = input.value || '(empty)';
+            result.style.display = 'block';
+        }
+        
+        // Add event listeners for debugging
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('test-input');
+            
+            input.addEventListener('input', (e) => {
+                console.log('Input changed:', e.target.value);
+            });
+            
+            input.addEventListener('focus', () => {
+                console.log('Input focused');
+            });
+            
+            input.addEventListener('blur', () => {
+                console.log('Input blurred');
+            });
+            
+            input.addEventListener('click', () => {
+                console.log('Input clicked');
+            });
+        });
+    </script>
+</body>
+</html>
